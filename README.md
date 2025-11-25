@@ -1,8 +1,31 @@
 # React Folder Structures
 This document outlines the React folder structure and explains the purpose of each directory.
 
-## 🗂️Component-Based Structure
+## 🗂️ Component-Based Structure
 A component-based (type-based) folder structure in React organises files based on their type or role within the application, promoting modularity and reusability.
+
+```bash
+src/
+├── components/
+│   ├── Button/
+│   │   ├── Button.tsx             # The primary component file
+│   │   ├── Button.css             # Local styles (or .module.css, .scss)
+│   │   ├── Button.test.tsx        # Unit tests
+│   │   ├── index.ts               # Exporting the component (facade)
+│   │   └── types.ts               # TypeScript interfaces/props
+│   ├── Card/
+│   │   ├── Card.tsx
+│   │   ├── Card.css
+│   │   ├── index.ts
+│   │   └── types.ts
+│   ├── index.ts                   # Main export file for the *entire* library
+│   └── shared-types.ts            # Global types used across components
+├── hooks/                         # Any reusable hooks
+├── utils/                         # Any reusable utilities
+└── index.ts                       # Entry point for build tools (e.g., Webpack/Rollup)
+```
+
+## 🗂️ Component-Based Structure for project
 
 ```bash
 src/
@@ -76,7 +99,7 @@ The root component that defines routing and layout selection.
 #### **index.js**  
 Entry point of the React application where the React root is created and the app is mounted.
 
-## 🗂️Feature-Based Structure
+## 🗂️ Feature-Based Structure
 This approach groups all files related to a specific feature or domain into one self-contained folder. This is the recommended modern approach for medium-to-large applications.
 ```bash
 src/
